@@ -1,5 +1,5 @@
 Name:                   cuda
-Version:                0.5.0.2
+Version:                0.5.0.3
 Synopsis:               FFI binding to the CUDA interface for programming NVIDIA GPUs
 Description:
     The CUDA library provides a direct, general purpose C-like SPMD programming
@@ -62,6 +62,10 @@ Library
                         Foreign.CUDA.Driver.Stream
                         Foreign.CUDA.Driver.Texture
                         Foreign.CUDA.Driver.Utils
+                        Foreign.CUDA.Driver.Graphics
+                        Foreign.CUDA.Driver.Graphics.OpenGL
+                        Foreign.CUDA.ForeignPtr
+                        Foreign.CUDA.Storable
 
   Other-modules:        Foreign.CUDA.Internal.C2HS
                         Foreign.CUDA.Internal.Offsets
@@ -70,7 +74,7 @@ Library
   C-sources:            cbits/stubs.c
 
   Build-tools:          c2hs >= 0.16, hsc2hs
-  Build-depends:        base >= 4 && < 5, bytestring
+  Build-depends:        base >= 4 && < 5, bytestring, OpenGL
   Extensions:
   ghc-options:          -Wall -O2 -funbox-strict-fields -fwarn-tabs
   ghc-prof-options:     -fprof-auto -fprof-cafs

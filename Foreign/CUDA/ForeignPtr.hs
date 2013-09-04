@@ -42,7 +42,7 @@ castForeignDevPtr = castForeignPtr
 newForeignDevPtr :: DevicePtr a -> IO (ForeignDevicePtr a)
 newForeignDevPtr dptr = newForeignPtr cuMemFree_ (useDevicePtr dptr)
 
-foreign import ccall unsafe "&cuMemFree_"
+foreign import ccall unsafe "&cuMemFree"
   cuMemFree_ :: FunPtr (Ptr a -> IO ())
 
 newForeignDevPtr_ :: DevicePtr a -> IO (ForeignDevicePtr a)
